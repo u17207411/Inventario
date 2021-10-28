@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/plantilla :: head">
+
+        <title>Login</title>
+    </head>
+    <body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+
+            <section class="vh-100 gradient-custom">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                            <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                                <div class="card-body p-5 text-center">
+
+                                    <div class="mb-md-5 mt-md-4 pb-5">
+
+                                        <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                                        <br/><br/>
+                                        <div class="form-outline form-white mb-4">
+
+                                            <form method="POST" th:action="@{/login}">
+                                                <div class="form-outline form-white mb-4">
+                                                    <label for="username">USUARIO</label>
+                                                    <input type="text" name="username" id="username" class="form-control form-control-lg"/>
+                                                </div>
+                                                <div class="form-outline form-white mb-4">
+                                                    <label for="password">CONTRASEÑA</label>
+                                                    <input type="password" name="password" id="password" class="form-control form-control-lg"/>
+
+                                                </div>
+                                                <br/>
+                                                <div>
+                                                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Ingresar</button>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer th:replace="layout/plantilla :: footer"></footer>
+            <script th:src="@{/js/main.js}"></script>
+        </body>
+</html>
