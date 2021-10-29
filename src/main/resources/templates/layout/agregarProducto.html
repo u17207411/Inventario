@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Agregar Producto</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        
+        <section th:fragment="agregarProducto">
+            <div id="agregarProducto" class="modal fade">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header bg-info text-white">
+                            <h5 class="modal-title" th:text="#{accion.agregar}">Agregar Producto</h5>
+                            <button class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div> 
+                        <form th:action="@{/guardarProducto}" th:object="${producto}"
+                              method="POST" class="was-validated">
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="codigoproducto" th:text="#{producto.codigo}">Nombre</label>
+                                    <input type="text" class="form-control" name="codigoproducto" required="true">
+                                </div>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="nombreproducto" th:text="#{producto.nombre}">Nombre</label>
+                                    <input type="text" class="form-control" name="nombreproducto" required="true">
+                                </div>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="idmarca" th:text="#{producto.idmarca}">Nombre</label>
+                                    <input type="number" class="form-control" name="idmarca" required="true">
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="idcategoria" th:text="#{producto.idcategoria}">Nombre</label>
+                                    <input type="number" class="form-control" name="idcategoria" required="true">
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="idlocalizacion" th:text="#{producto.idlocalizacion}">Nombre</label>
+                                    <input type="number" class="form-control" name="idlocalizacion" required="true">
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="idunidadmedida" th:text="#{producto.idunidadmedida}">Nombre</label>
+                                    <input type="number" class="form-control" name="idunidadmedida" required="true">
+                                </div>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="tipomoneda" th:text="#{producto.tipomoneda}">Nombre</label>
+                                    <input type="text" class="form-control" name="tipomoneda" required="true">
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="costoproducto" th:text="#{producto.costoproducto}">Nombre</label>
+                                    <input type="number" class="form-control" name="costoproducto" required="true" step='any'>
+                                </div>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="precioproducto" th:text="#{producto.precioproducto}">Nombre</label>
+                                    <input type="number" class="form-control" name="precioproducto" required="true" step='any'>
+                                </div>
+                            </div>                          
+                            
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="cantidadminproducto" th:text="#{producto.cantidadminproducto}">Nombre</label>
+                                    <input type="number" class="form-control" name="cantidadminproducto" required="true" step='any'>
+                                </div>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="cantidadmaxproducto" th:text="#{producto.cantidadmaxproducto}">Nombre</label>
+                                    <input type="number" class="form-control" name="cantidadmaxproducto" required="true" step='any'>
+                                </div>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="comentarioproducto" th:text="#{producto.comentarioproducto}">Nombre</label>
+                                    <input type="text" class="form-control" name="comentarioproducto" required="true">
+                                </div>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="stock" th:text="#{producto.stock}">Nombre</label>
+                                    <input type="number" class="form-control" name="stock" required="true" step='any'>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" type="submit" th:text="#{accion.guardar}">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

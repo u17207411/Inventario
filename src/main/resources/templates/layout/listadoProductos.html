@@ -10,7 +10,7 @@
         <section th:fragment="listadoProductos" id="productos">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4>[[#{producto.titulo-lista}]]</h4>
@@ -20,7 +20,14 @@
                                     <thead class="thead-dark">
                                         <tr>
                                             <th>#</th>
+                                            <th th:text="#{producto.codigo}">Codigo</th>
                                             <th th:text="#{producto.nombre}">Nombre</th>
+                                            <th th:text="#{producto.idunidadmedida}">Nombre</th>
+                                            <th th:text="#{producto.tipomoneda}">Nombre</th>
+                                            <th th:text="#{producto.costoproducto}">Nombre</th>
+                                            <th th:text="#{producto.precioproducto}">Nombre</th>
+                                            <th th:text="#{producto.idlocalizacion}">Nombre</th>
+                                            <th th:text="#{producto.stock}">Nombre</th>
                                             <th></th>
                                             <th></th>
                                         </tr>
@@ -28,7 +35,14 @@
                                     <tbody>
                                         <tr th:each="producto, contador : ${productos}">
                                             <td>[[${contador.count}]]</td>
+                                            <td>[[${producto.codigoproducto}]]</td>
                                             <td>[[${producto.nombreproducto}]]</td>
+                                            <td>[[${producto.idunidadmedida}]]</td>
+                                            <td>[[${producto.tipomoneda}]]</td>
+                                            <td>[[${new java.text.DecimalFormat('#,##0.00').format(producto.costoproducto)}]]</td>
+                                            <td>[[${producto.precioproducto}]]</td>
+                                            <td>[[${producto.idlocalizacion}]]</td>
+                                            <td>[[${producto.stock}]]</td>
                                             <td>
                                                 <a th:href="@{/editarProducto/} + ${producto.idproducto}"
                                                    class="btn btn-secondary">
@@ -48,9 +62,11 @@
                             <div class="text-center p-2" th:if="${productos == null or productos.empty}">
                                 <span th:text="#{producto.lista-vacia}">Lista vacía</span>
                             </div>
+
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
     </body>

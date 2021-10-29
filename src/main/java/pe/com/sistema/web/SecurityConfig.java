@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/editar/**", "/agregar/**", "/eliminar","/editarCategoria/**", "/agregarCategoria/**", "/eliminarCategoria")
+                .antMatchers("/editar/**", "/agregar/**", "/eliminar","/editarCategoria/**", "/agregarCategoria/**", "/eliminarCategoria","/editarProducto/**", "/agregarProducto/**", "/eliminarProducto")
                 .hasRole("ADMIN")
                 .antMatchers("/")
                 .hasAnyRole("USER", "ADMIN")
