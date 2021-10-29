@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Editar Producto</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <section th:fragment="editarProducto">
+            <form th:action="@{/guardarProducto}" th:object="${producto}"
+                  method="POST" class="was-validated">
+                <input type="hidden" name="idproducto" th:field="*{idproducto}"/>
+                <section th:replace="layout/botonesEditarProducto :: botonesEditarProducto"></section>
+                <div id="details">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>[[#{accion.editar}]]</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        
+                                        <div class="form-group">
+                                            <label for="codigoproducto">[[#{producto.codigo}]]</label>
+                                            <input type="text" class="form-control" name="codigoproducto" 
+                                                   required="true" th:field="*{codigoproducto}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="nombreproducto">[[#{producto.nombre}]]</label>
+                                            <input type="text" class="form-control" name="nombreproducto" 
+                                                   required="true" th:field="*{nombreproducto}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="idmarca">[[#{producto.idmarca}]]</label>
+                                            <input type="number" class="form-control" name="idmarca" 
+                                                   required="true" th:field="*{idmarca}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="idcategoria">[[#{producto.idcategoria}]]</label>
+                                            <input type="number" class="form-control" name="idcategoria" 
+                                                   required="true" th:field="*{idcategoria}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="idlocalizacion">[[#{producto.idlocalizacion}]]</label>
+                                            <input type="number" class="form-control" name="idlocalizacion" 
+                                                   required="true" th:field="*{idlocalizacion}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="idunidadmedida">[[#{producto.idunidadmedida}]]</label>
+                                            <input type="number" class="form-control" name="idunidadmedida" 
+                                                   required="true" th:field="*{idunidadmedida}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="tipomoneda">[[#{producto.tipomoneda}]]</label>
+                                            <input type="text" class="form-control" name="tipomoneda" 
+                                                   required="true" th:field="*{tipomoneda}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="costoproducto">[[#{producto.costoproducto}]]</label>
+                                            <input type="number" class="form-control" name="costoproducto" 
+                                                   required="true" th:field="*{costoproducto}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="precioproducto">[[#{producto.precioproducto}]]</label>
+                                            <input type="number" class="form-control" name="precioproducto" 
+                                                   required="true" th:field="*{precioproducto}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="cantidadminproducto">[[#{producto.cantidadminproducto}]]</label>
+                                            <input type="number" class="form-control" name="cantidadminproducto" 
+                                                   required="true" th:field="*{cantidadminproducto}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="cantidadmaxproducto">[[#{producto.cantidadmaxproducto}]]</label>
+                                            <input type="number" class="form-control" name="cantidadmaxproducto" 
+                                                   required="true" th:field="*{cantidadmaxproducto}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="cantidadminproducto">[[#{producto.cantidadminproducto}]]</label>
+                                            <input type="number" class="form-control" name="cantidadminproducto" 
+                                                   required="true" th:field="*{cantidadminproducto}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="comentarioproducto">[[#{producto.comentarioproducto}]]</label>
+                                            <input type="text" class="form-control" name="comentarioproducto" 
+                                                   required="true" th:field="*{comentarioproducto}"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="stock">[[#{producto.stock}]]</label>
+                                            <input type="number" class="form-control" name="stock" 
+                                                   required="true" th:field="*{stock}"/>
+                                        </div>
+                                                                               
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+        
+    </body>
+</html>
