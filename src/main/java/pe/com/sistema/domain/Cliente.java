@@ -31,18 +31,17 @@ public class Cliente implements Serializable{
     @NotEmpty
     private String razonsocialcliente;
     
-    @NotEmpty
+
     private String telefonocliente;
     
     @NotEmpty
     @Email
-    private String correocliente;
+    private String email;
     
     @NotEmpty
-    private String nombreContactocliente;
+    private String contactocliente;
     
     @NotEmpty
-    @Email
     private String direccioncliente;
 
 }

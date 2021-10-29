@@ -21,7 +21,7 @@ public class ControladorCategoria {
     @GetMapping("/Categoria")
     public String inicio(Model model){
         var categorias = categoriaService.listarCategorias();
-        log.info("ejecutando el controlador Spring MVC");
+        log.info("ejecutando el controlador Categoria");
         model.addAttribute("categorias", categorias);
         return "indexCategoria";
     }
@@ -34,7 +34,7 @@ public class ControladorCategoria {
     @PostMapping("/guardarCategoria")
     public String guardar(@Valid Categoria categoria, Errors errores){
         if(errores.hasErrors()){
-            return "problemas";
+            return "modificarCategoria";
         }
         categoriaService.guardar(categoria);
         return "redirect:/Categoria";

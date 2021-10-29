@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Editar Proveedor</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <section th:fragment="editarProveedor">
+            <form th:action="@{/guardarProveedor}" th:object="${proveedor}"
+                  method="POST" class="was-validated">
+                <input type="hidden" name="idproveedor" th:field="*{idproveedor}"/>
+                <section th:replace="layout/botonesEditarProveedor :: botonesEditarProveedor"></section>
+                <div id="details">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>[[#{accion.editar}]]</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="ruc">[[#{proveedor.ruc}]]</label>
+                                            <input type="text" class="form-control" name="ruc" 
+                                                   required="true" th:field="*{ruc}"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="razonsocial">[[#{proveedor.razonsocial}]]</label>
+                                            <input type="text" class="form-control" name="razonsocial" 
+                                                   required="true" th:field="*{razonsocial}"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="telefono">[[#{proveedor.telefono}]]</label>
+                                            <input type="text" class="form-control" name="telefono" 
+                                                   th:field="*{telefono}"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="correo">[[#{proveedor.correo}]]</label>
+                                            <input type="email" class="form-control" name="correo" 
+                                                   required="true" th:field="*{correo}"/>
+                                        </div>
+                                         <div class="form-group">
+                                            <label for="contacto">[[#{proveedor.contacto}]]</label>
+                                            <input type="text" class="form-control" name="contacto" 
+                                                   th:field="*{contacto}"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="direccion">[[#{proveedor.direccion}]]</label>
+                                            <input type="text" class="form-control" name="direccion" 
+                                                   required="true" th:field="*{direccion}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </body>
+</html>

@@ -16,7 +16,7 @@
         <header th:fragment="header">
             <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
                 <div class="container">
-                    <a th:href="@{/}" class="navbar-brand" th:text="#{plantilla.titulo}">Control Clientes</a>
+                    <a th:href="@{/}" class="navbar-brand" th:text="#{plantilla.titulo}">Control Personal</a>
                     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -24,6 +24,15 @@
                         <ul class="navbar-nav">
                             <li class="nav-item px-2">
                                 <a th:href="@{/Categoria}" class="nav-link active" th:text="#{barra.categoria}">Categoria</a>
+                            </li>
+                            <li class="nav-item px-2">
+                                <a th:href="@{/Proveedor}" class="nav-link active" th:text="#{barra.proveedor}">Proveedor</a>
+                            </li>
+                             <li class="nav-item px-2">
+                                <a th:href="@{/Cliente}" class="nav-link active" th:text="#{barra.cliente}">Cliente</a>
+                            </li>
+                            <li class="nav-item px-2">
+                                <a th:href="@{/Unidadmedida}" class="nav-link active" th:text="#{barra.unidadmedida}">Unidad Medida</a>
                             </li>
                         </ul>
                         <ul sec:authorize="isAuthenticated()" class="navbar-nav ml-auto">
@@ -48,9 +57,9 @@
             <section id="main-header" class="py-2 bg-info text-white">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <h1>
-                                <i class="fas fa-cog"></i> Control de Inventario
+                                <i class="fas fa-cog"></i> Control de Inventario y Personal
                             </h1>
                         </div>
                     </div>

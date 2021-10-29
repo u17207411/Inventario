@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Listado Unidades medida</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <section th:fragment="listadoUnidadesmedida" id="unidadesmedida">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>[[#{unidadmedida.titulo-lista}]]</h4>
+                            </div>
+                            <div th:if="${unidadesmedida != null and !unidadesmedida.empty}">
+                                <table class="table table-stryped">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>#</th>
+                                            <th th:text="#{unidadmedida.nombre}">Nombre</th>
+                                            <th th:text="#{unidadmedida.abreviatura}">Abreviatura</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="unidadmedida, contador : ${unidadesmedida}">
+                                            <td>[[${contador.count}]]</td>
+                                            <td>[[${unidadmedida.nombreunidadmedida}]]</td>
+                                            <td>[[${unidadmedida.abreviaturaunidadmedida}]]</td>
+                                            <td>
+                                                <a th:href="@{/editarUnidadmedida/} + ${unidadmedida.idunidadmedida}"
+                                                   class="btn btn-secondary">
+                                                    <i class="fas fa-angle-double-right"></i> [[#{accion.editar}]]
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a th:href="@{/eliminarUnidadmedida(idunidadmedida=${unidadmedida.idunidadmedida})}"
+                                                   class="btn btn-dark">
+                                                    <i class="fas fa-angle-double-right"></i> [[#{accion.eliminar}]]
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>  
+                            <div class="text-center p-2" th:if="${unidadesmedida == null or unidadesmedida.empty}">
+                                <span th:text="#{unidadmedida.lista-vacia}">Lista vacía</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

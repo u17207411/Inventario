@@ -3,46 +3,46 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
-        <title>Agregar Cliente</title>
+        <title>Agregar Proveedor</title>
         <meta charset="UTF-8"/>
     </head>
     <body>
-        <section th:fragment="agregarCliente">
+        <section th:fragment="agregarProveedor">
             <div id="agregarProveedor" class="modal fade">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header bg-info text-white">
-                            <h5 class="modal-title" th:text="#{accion.agregar}">Agregar Cliente</h5>
+                            <h5 class="modal-title" th:text="#{accion.agregar}">Agregar Proveedor</h5>
                             <button class="close" data-dismiss="modal">
                                 <span>&times;</span>
                             </button>
                         </div> 
-                        <form th:action="@{/guardarCliente}" th:object="${cliente}"
+                        <form th:action="@{/guardarProveedor}" th:object="${proveedor}"
                               method="POST" class="was-validated">
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="ruccliente" th:text="#{cliente.ruccliente}">RUC</label>
-                                    <input type="text" class="form-control" name="ruccliente" required="true">
+                                    <label for="ruc" th:text="#{proveedor.ruc}">RUC</label>
+                                    <input type="text" class="form-control" name="ruc" required="true">
                                 </div>
                                 <div class="form-group">
-                                    <label for="razonsocialcliente" th:text="#{cliente.razonsocialcliente}">Razon Social</label>
-                                    <input type="text" class="form-control" name="razonsocialcliente" required="true">
+                                    <label for="razonsocial" th:text="#{proveedor.razonsocial}">Razon Social</label>
+                                    <input type="text" class="form-control" name="razonsocial" required="true">
                                 </div>
                                 <div class="form-group">
-                                    <label for="telefonocliente" th:text="#{cliente.telefonocliente}">Telefono</label>
-                                    <input type="text" class="form-control" name="telefonocliente" >
+                                    <label for="telefono" th:text="#{proveedor.telefono}">Telefono</label>
+                                    <input type="text" class="form-control" name="telefono">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email" th:text="#{cliente.email}">Email</label>
-                                    <input type="email" class="form-control" name="email" required="true">
+                                    <label for="correo" th:text="#{proveedor.correo}">Email</label>
+                                    <input type="email" class="form-control" name="correo" required="true">
                                 </div>
                                 <div class="form-group">
-                                    <label for="contactocliente" th:text="#{cliente.contactocliente}">Contacto</label>
-                                    <input type="text" class="form-control" name="contactocliente">
+                                    <label for="contacto" th:text="#{proveedor.contacto}">Contacto</label>
+                                    <input type="text" class="form-control" name="contacto">
                                 </div>
                                 <div class="form-group">
-                                    <label for="direccioncliente" th:text="#{cliente.direccioncliente}">Dirección</label>
-                                    <input type="text" class="form-control" name="direccioncliente" required="true">
+                                    <label for="direccion" th:text="#{proveedor.direccion}">Drección</label>
+                                    <input type="text" class="form-control" name="direccion" required="true">
                                 </div>
 
                             </div>

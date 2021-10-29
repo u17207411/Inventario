@@ -8,10 +8,10 @@
     </head>
     <body>
         <section th:fragment="editarCliente">
-            <form th:action="@{/guardar}" th:object="${persona}"
+            <form th:action="@{/guardarCliente}" th:object="${cliente}"
                   method="POST" class="was-validated">
-                <input type="hidden" name="idPersona" th:field="*{idPersona}"/>
-                <section th:replace="layout/botonesEditar :: botonesEditar"></section>
+                <input type="hidden" name="idcliente" th:field="*{idcliente}"/>
+                <section th:replace="layout/botonesEditarCliente :: botonesEditarCliente"></section>
                 <div id="details">
                     <div class="container">
                         <div class="row">
@@ -22,24 +22,34 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label for="nombre">[[#{persona.nombre}]]</label>
-                                            <input type="text" class="form-control" name="nombre" 
-                                                   required="true" th:field="*{nombre}"/>
+                                            <label for="ruccliente">[[#{cliente.ruccliente}]]</label>
+                                            <input type="text" class="form-control" name="ruccliente" 
+                                                   required="true" th:field="*{ruccliente}"/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="apellido">[[#{persona.apellido}]]</label>
-                                            <input type="text" class="form-control" name="apellido" 
-                                                   required="true" th:field="*{apellido}"/>
+                                            <label for="razonsocialcliente">[[#{cliente.razonsocialcliente}]]</label>
+                                            <input type="text" class="form-control" name="razonsocialcliente" 
+                                                   required="true" th:field="*{razonsocialcliente}"/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="email">[[#{persona.email}]]</label>
+                                            <label for="telefonocliente">[[#{cliente.telefonocliente}]]</label>
+                                            <input type="text" class="form-control" name="telefonocliente" 
+                                                    th:field="*{telefonocliente}"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">[[#{cliente.email}]]</label>
                                             <input type="email" class="form-control" name="email" 
                                                    required="true" th:field="*{email}"/>
                                         </div>
                                          <div class="form-group">
-                                            <label for="telefono">[[#{persona.telefono}]]</label>
-                                            <input type="text" class="form-control" name="telefono" 
-                                                   required="true" th:field="*{telefono}"/>
+                                            <label for="contactocliente">[[#{cliente.contactocliente}]]</label>
+                                            <input type="text" class="form-control" name="contactocliente" 
+                                                    th:field="*{contactocliente}"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="direccioncliente">[[#{cliente.direccioncliente}]]</label>
+                                            <input type="text" class="form-control" name="direccioncliente" 
+                                                   required="true" th:field="*{direccioncliente}"/>
                                         </div>
                                     </div>
                                 </div>

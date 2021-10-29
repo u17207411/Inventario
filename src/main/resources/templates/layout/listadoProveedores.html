@@ -3,50 +3,50 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
-        <title>Listado Clientes</title>
+        <title>Listado Proveedores</title>
         <meta charset="UTF-8"/>
     </head>
     <body>
-        <section th:fragment="listadoClientes" id="clientes">
-            <div class="container">
+        <section th:fragment="listadoProveedores" id="proveedores">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-10">
                         <div class="card">
                             <div class="card-header">
-                                <h4>[[#{cliente.titulo-lista}]]</h4>
+                                <h4>[[#{proveedor.titulo-lista}]]</h4>
                             </div>
-                            <div th:if="${clientes != null and !clientes.empty}">
+                            <div th:if="${proveedores != null and !proveedores.empty}">
                                 <table class="table table-stryped">
                                     <thead class="thead-dark">
                                         <tr>
                                             <th>#</th>
-                                            <th th:text="#{cliente.ruccliente}">RUC</th>
-                                            <th th:text="#{cliente.razonsocialcliente}" style="text-align: center;">Razon Social</th>
-                                            <th th:text="#{cliente.telefonocliente}">Telefono</th>
-                                            <th th:text="#{cliente.email}" style="text-align: center;">Email</th>
-                                            <th th:text="#{cliente.contactocliente}">Contacto</th>
-                                            <th th:text="#{cliente.direccioncliente}">Dirección</th>
+                                            <th th:text="#{proveedor.ruc}">RUC</th>
+                                            <th th:text="#{proveedor.razonsocial}" style="text-align: center;">Razon Social</th>
+                                            <th th:text="#{proveedor.telefono}">Telefono</th>
+                                            <th th:text="#{proveedor.correo}" style="text-align: center;">Email</th>
+                                            <th th:text="#{proveedor.contacto}">Contacto</th>
+                                            <th th:text="#{proveedor.direccion}">Dirección</th>
                                             <th></th>
                                             <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr th:each="cliente, contador : ${clientes}">
+                                        <tr th:each="proveedor, contador : ${proveedores}">
                                             <td>[[${contador.count}]]</td>
-                                            <td>[[${cliente.ruccliente}]]</td>
-                                            <td>[[${cliente.razonsocialcliente}]]</td>
-                                            <td>[[${cliente.telefonocliente}]]</td>
-                                            <td>[[${cliente.email}]]</td>
-                                            <td>[[${cliente.contactocliente}]]</td>
-                                            <td>[[${cliente.direccioncliente}]]</td>
+                                            <td>[[${proveedor.ruc}]]</td>
+                                            <td>[[${proveedor.razonsocial}]]</td>
+                                            <td>[[${proveedor.telefono}]]</td>
+                                            <td>[[${proveedor.correo}]]</td>
+                                            <td>[[${proveedor.contacto}]]</td>
+                                            <td>[[${proveedor.direccion}]]</td>
                                             <td>
-                                                <a th:href="@{/editarCliente/} + ${cliente.idcliente}"
+                                                <a th:href="@{/editarProveedor/} + ${proveedor.idproveedor}"
                                                    class="btn btn-secondary">
                                                     <i class="fas fa-angle-double-right"></i> [[#{accion.editar}]]
                                                 </a>
                                             </td>
                                             <td>
-                                                <a th:href="@{/eliminarCliente(idcliente=${cliente.idcliente})}"
+                                                <a th:href="@{/eliminarProveedor(idproveedor=${proveedor.idproveedor})}"
                                                    class="btn btn-dark">
                                                     <i class="fas fa-angle-double-right"></i> [[#{accion.eliminar}]]
                                                 </a>
@@ -55,8 +55,8 @@
                                     </tbody>
                                 </table>
                             </div>  
-                            <div class="text-center p-2" th:if="${clientes == null or clientes.empty}">
-                                <span th:text="#{cliente.lista-vacia}">Lista vacía</span>
+                            <div class="text-center p-2" th:if="${proveedores == null or proveedores.empty}">
+                                <span th:text="#{proveedor.lista-vacia}">Lista vacía</span>
                             </div>
                         </div>
                     </div>
@@ -64,9 +64,9 @@
 
                         <div class="card text-center bg-success text-white mb-3">
                             <div class="card-body">
-                                <h3 th:text="#{cliente.totalClientes}">Total Clientes</h3>
+                                <h3 th:text="#{proveedor.totalProveedores}">Total</h3>
                                 <h4 class="display-4">
-                                    <i class="fas fa-users"></i> [[${totalClientes}]]
+                                    <i class="fas fa-users"></i> [[${totalProveedores}]]
                                 </h4>
                             </div>
                         </div>

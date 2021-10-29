@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Editar Unidad medida</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <section th:fragment="editarUnidadmedida">
+            <form th:action="@{/guardarUnidadmedida}" th:object="${unidadmedida}"
+                  method="POST" class="was-validated">
+                <input type="hidden" name="idunidadmedida" th:field="*{idunidadmedida}"/>
+                <section th:replace="layout/botonesEditarUnidadmedida :: botonesEditarUnidadmedida"></section>
+                <div id="details">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>[[#{accion.editar}]]</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="nombreunidadmedida">[[#{unidadmedida.nombreunidadmedida}]]</label>
+                                            <input type="text" class="form-control" name="nombreunidadmedida" 
+                                                   required="true" th:field="*{nombreunidadmedida}"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="abreviaturaunidadmedida">[[#{unidadmedida.abreviaturaunidadmedida}]]</label>
+                                            <input type="text" class="form-control" name="abreviaturaunidadmedida" 
+                                                   required="true" th:field="*{abreviaturaunidadmedida}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+        
+    </body>
+</html>

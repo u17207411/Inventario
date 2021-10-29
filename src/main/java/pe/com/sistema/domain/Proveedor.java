@@ -31,8 +31,8 @@ public class Proveedor implements Serializable{
     @NotEmpty
     private String razonsocial;
     
-    @NotEmpty
-    private int telefono;
+
+    private String telefono;
     
     @NotEmpty
     @Email

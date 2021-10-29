@@ -27,7 +27,7 @@ public class ControladorPersona {
         log.info("usuario que hizo login:" + user);
         model.addAttribute("personas", personas);
 
-        model.addAttribute("totalClientes", personas.size());
+        model.addAttribute("totalEmpleados", personas.size());
         return "index";
     }
 

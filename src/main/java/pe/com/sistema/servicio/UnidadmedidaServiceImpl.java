@@ -21,14 +21,14 @@ public class UnidadmedidaServiceImpl implements UnidadmedidaService {
 
     @Override
     @Transactional
-    public void guardar(Unidadmedida persona) {
-        unidadmedidaDao.save(persona);
+    public void guardar(Unidadmedida unidadmedida) {
+        unidadmedidaDao.save(unidadmedida);
     }
 
     @Override
     @Transactional
-    public void eliminar(Unidadmedida persona) {
-        unidadmedidaDao.delete(persona);
+    public void eliminar(Unidadmedida unidadmedida) {
+        unidadmedidaDao.delete(unidadmedida);
     }
 
     @Override
